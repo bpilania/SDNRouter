@@ -1,9 +1,9 @@
+#include"simplequeue.h"
 #include"message.h"
 #include"grouter.h"
-#include<stdint.h>
-#include"simplequeue.h"
+#include "ip.h"
 
-
+#define FLOWTABLE_SIZE 100
 #define FORWARD_ALL 1
 #define FORWARD_CONTROLLER 2
 #define DROP 3
@@ -11,8 +11,7 @@
 #define ADD_NEW 5
 #define DELETE 6
 
-void* process_packet(void * args);
-void process_packet_from_queue1(struct queue* ,	struct queue* , struct queue* , pthread_t *);
+
 
 struct fields{
 	int ingress_port;
@@ -34,7 +33,6 @@ struct per_flow_counters{
 	uint64_t received_packets;
 	uint64_t received_bytes;
 	uint32_t duration;
-
 };
 
 
@@ -49,7 +47,7 @@ struct per_table_counters{
 	uint64_t packet_lookups;
 	uint64_t packet_matches;
 
-}per_table_counters={0,0,0};
+};
 
 struct port_counters{
 	uint64_t received_packets;
@@ -71,7 +69,13 @@ struct arguments{
 	struct queue* queue1_head;
 	struct queue* output_queue_tail;
 	struct queue* queue2_tail;
+	struct flowentry* flowtable;
 };
+
+void* process_packet(void * args);
+void process_packet_from_queue1(struct queue* ,	struct queue* , struct queue* , pthread_t *, struct flowentry*);
+
+struct flowentry flowtable[FLOWTABLE_SIZE];
 
 
 
