@@ -106,8 +106,23 @@ void* process_packet(void * args) {
 					if(flowtable[count].match.ip_addr_dest[3] != ip_pkt->ip_dst[3])
 						continue;
 
-					//apply actions and place packet in output queue if required
-					//update counters
+					if(flowtable[count].action == FORWARD_ALL){
+						//Replicate packet for all outgoing ports and place packets in output_queue
+					}
+
+					if(flowtable[count].action == FORWARD_TO_DESTINATION){
+						//Change packet's outgoing port and place packets in output_queue
+					}
+
+					if(flowtable[count].action == FORWARD_CONTROLLER){
+						//Change packet's outgoing port and place packets in output_queue
+					}
+
+					if(flowtable[count].action == DROP){
+						//free the memory of packet
+					}
+
+					//update counters and insert logic to check next packet
 
 
 				}

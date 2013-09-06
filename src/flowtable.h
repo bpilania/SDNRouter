@@ -4,6 +4,7 @@
 #include "ip.h"
 
 #define FLOWTABLE_SIZE 100
+#define FORWARD_TO_DESTINATION 0
 #define FORWARD_ALL 1
 #define FORWARD_CONTROLLER 2
 #define DROP 3
@@ -40,6 +41,7 @@ struct flowentry{
 	struct fields match;
 	struct per_flow_counters stats;
 	int action; //Allowed actions on a flow entry are 1, 2, 3
+	int port_number; //to be used in case FORWARD_TO_DESTINATION = 0
 };
 
 struct per_table_counters{
