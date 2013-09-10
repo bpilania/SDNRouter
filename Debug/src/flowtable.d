@@ -1,12 +1,16 @@
-src/flowtable.d: ../src/flowtable.c ../src/flowtable.h \
- ../src/simplequeue.h ../src/message.h ../src/grouter.h ../src/ip.h
+src/flowtable.d: /home/2012/bpilan/SDNGiniRouter/src/flowtable.c \
+ /home/2012/bpilan/SDNGiniRouter/src/flowtable.h \
+ /home/2012/bpilan/SDNGiniRouter/src/simplequeue.h \
+ /home/2012/bpilan/SDNGiniRouter/src/message.h \
+ /home/2012/bpilan/SDNGiniRouter/src/grouter.h \
+ /home/2012/bpilan/SDNGiniRouter/src/ip.h
 
-../src/flowtable.h:
+/home/2012/bpilan/SDNGiniRouter/src/flowtable.h:
 
-../src/simplequeue.h:
+/home/2012/bpilan/SDNGiniRouter/src/simplequeue.h:
 
-../src/message.h:
+/home/2012/bpilan/SDNGiniRouter/src/message.h:
 
-../src/grouter.h:
+/home/2012/bpilan/SDNGiniRouter/src/grouter.h:
 
-../src/ip.h:
+/home/2012/bpilan/SDNGiniRouter/src/ip.h:

@@ -1,3 +1,4 @@
-src/simplequeue.d: ../src/simplequeue.c ../src/simplequeue.h
+src/simplequeue.d: /home/2012/bpilan/SDNGiniRouter/src/simplequeue.c \
+ /home/2012/bpilan/SDNGiniRouter/src/simplequeue.h
 
-../src/simplequeue.h:
+/home/2012/bpilan/SDNGiniRouter/src/simplequeue.h:

@@ -23,19 +23,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: SDNGiniRouter
+all: SDNRouter
 
 # Tool invocations
-SDNGiniRouter: $(OBJS) $(USER_OBJS)
+SDNRouter: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "SDNGiniRouter" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "SDNRouter" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) SDNGiniRouter
+	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) SDNRouter
 	-@echo ' '
 
 .PHONY: all clean dependents
